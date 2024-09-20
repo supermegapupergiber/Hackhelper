@@ -1,7 +1,15 @@
-ai-chatbot/
+hackathon-platform/
 │
-├── index.html
-├── styles.css
-├── script.js
-├── README.md
-└── .gitignore
+├── README.md                      # Описание проекта
+├── docs/                          # Документация
+│   └── proposal.md                # Предложение для хакатона
+├── backend/                       # Серверная часть проекта
+│   ├── app.py                     # Основное приложение Flask/Django
+│   ├── models/                    # Модели данных
+│   └── services/                  # Сервисы (ИИ, Рейтинг)
+├── frontend/                      # Клиентская часть проекта
+│   ├── index.html                 # Основная страница
+│   ├── profile.html               # Страница профиля участника
+│   └── team.html                  # Страница команды
+└── ai_helper/                     # Компонент ИИ-помощника
+    └── ai.py                      # Логика работы ИИ
