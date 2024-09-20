@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot</title>
+    <title>Hackathon Platform</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Интерактивный AI Чат-бот</h1>
-    <div id="chat-container">
-        <input type="text" id="user-input" placeholder="Введите ваше сообщение...">
-        <button id="send-button">Отправить</button>
+    <h1>Список команд</h1>
+    <div id="teams-list">
+        <!-- Здесь будут отображены команды -->
     </div>
-    <div id="chat-output"></div>
-    <script src="script.js"></script>
+
+    <script>
+        fetch('/teams')
+            .then(response => response.json())
+            .then(data => {
+                const teamsList = document.getElementById('teams-list');
+                data.forEach(team => {
+                    const teamElement = document.createElement('div');
+                    teamElement.innerHTML = `<h2>${team.name}</h2><p>Рейтинг: ${team.rating}</p>`;
+                    teamsList.appendChild(teamElement);
+                });
+            });
+    </script>
 </body>
 </html>
